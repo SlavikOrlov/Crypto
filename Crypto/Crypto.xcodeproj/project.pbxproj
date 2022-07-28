@@ -80,7 +80,6 @@
 				1C2368F81B69FB48FB8F79D1 /* Pods-Crypto.debug.xcconfig */,
 				EDDC3DF8E51E93CAD7DF266B /* Pods-Crypto.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};

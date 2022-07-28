@@ -8,26 +8,39 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UITextFieldDelegate {
+    
+    let emailTextField = UITextField()
+    let passwordTextField = UITextField()
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        background()
         initialize()
+        emailTextField.delegate = self
+        passwordTextField.delegate = self
         
     }
     
+    private func background() {
+        let gradientLayer = CAGradientLayer()
+        gradientLayer.frame = view.bounds
+        gradientLayer.colors = [
+            UIColor(red: 94.0/255.0, green: 230.0/255.0, blue: 240.0/255.0, alpha: 1.0).cgColor,
+            UIColor(red: 154.0/255.0, green: 61.0/255.0, blue: 235.0/255.0, alpha: 1.0).cgColor,
+            UIColor(red: 105.0/255.0, green: 18.0/255.0, blue: 213.0/255.0, alpha: 1.0).cgColor,
+        ]
+        view.layer.addSublayer(gradientLayer)
+    }
+    
     private func initialize() {
-        view.backgroundColor = UIColor(red: 128/255, green: 128/255, blue: 128/255, alpha: 1)
-        
-        let imageCoin = UIImage()
-        
-        
+       
         // MARK: - настройка поля логин
         
-        let emailTextField = UITextField()
-        
-        emailTextField.backgroundColor = .lightGray
+        emailTextField.backgroundColor = UIColor(red: 94.0/255.0, green: 230.0/255.0, blue: 240.0/255.0, alpha: 0.5)
+        emailTextField.textColor = UIColor.black
         emailTextField.borderStyle = UITextField.BorderStyle.roundedRect
         emailTextField.contentVerticalAlignment = UITextField.ContentVerticalAlignment.center
         emailTextField.textAlignment = .center
@@ -40,9 +53,9 @@ class ViewController: UIViewController {
         
         // MARK: - настройка поля пароль
         
-        let passwordTextField = UITextField()
         
-        passwordTextField.backgroundColor = .lightGray
+        passwordTextField.backgroundColor = UIColor(red: 94.0/255.0, green: 230.0/255.0, blue: 240.0/255.0, alpha: 0.5)
+        passwordTextField.textColor = UIColor.black
         passwordTextField.borderStyle = UITextField.BorderStyle.roundedRect
         passwordTextField.contentVerticalAlignment = UITextField.ContentVerticalAlignment.center
         passwordTextField.textAlignment = .center
@@ -55,8 +68,8 @@ class ViewController: UIViewController {
         
         // MARK: - кнопка входа
         
-        let buttonEnter = UIButton(type: .system)
-        buttonEnter.backgroundColor = .lightGray
+        let buttonEnter = UIButton()
+        buttonEnter.backgroundColor = .gray
         buttonEnter.layer.cornerRadius = 20
         buttonEnter.setTitleColor(.white, for: .normal)
         buttonEnter.setTitle("Let's go ->", for: .normal)
@@ -70,7 +83,16 @@ class ViewController: UIViewController {
         
         
     }
-
-
+    
+    //MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        print("Убрать клавиатуру")
+        if textField == passwordTextField {
+            self.passwordTextField.resignFirstResponder()
+        }
+        return true
+    }
 }
+
 
