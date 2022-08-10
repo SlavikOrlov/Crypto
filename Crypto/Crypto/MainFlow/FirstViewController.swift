@@ -8,21 +8,29 @@
 import UIKit
 import SnapKit
 
-class ViewController: UIViewController, UITextFieldDelegate {
+final class FirstViewController: UIViewController, UITextFieldDelegate {
     
-    let emailTextField = UITextField()
-    let passwordTextField = UITextField()
+    // MARK: - Constants
     
+    private let emailTextField = CustomTextField()
+    private let passwordTextField = CustomTextField()
+    private let someDefault = UserDefaults.standard
+    private let login = "Slava"
+    private let password = "12345"
+    
+    // MARK: - Lifecyrcle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         background()
-        initialize()
+        configureAppearance()
         emailTextField.delegate = self
         passwordTextField.delegate = self
-        
+        self.hideKeyboard()
     }
+    
+    // MARK: - Private Methods
     
     private func background() {
         let gradientLayer = CAGradientLayer()
@@ -35,15 +43,10 @@ class ViewController: UIViewController, UITextFieldDelegate {
         view.layer.addSublayer(gradientLayer)
     }
     
-    private func initialize() {
-       
-        // MARK: - настройка поля логин
+    private func configureAppearance() {
         
-        emailTextField.backgroundColor = UIColor(red: 94.0/255.0, green: 230.0/255.0, blue: 240.0/255.0, alpha: 0.5)
-        emailTextField.textColor = UIColor.black
-        emailTextField.borderStyle = UITextField.BorderStyle.roundedRect
-        emailTextField.contentVerticalAlignment = UITextField.ContentVerticalAlignment.center
-        emailTextField.textAlignment = .center
+        // Create emailTextField
+        
         emailTextField.placeholder = "email"
         view.addSubview(emailTextField)
         emailTextField.snp.makeConstraints { make in
@@ -51,14 +54,8 @@ class ViewController: UIViewController, UITextFieldDelegate {
             make.top.equalToSuperview().inset(300)
         }
         
-        // MARK: - настройка поля пароль
+        // Create passwordTextField
         
-        
-        passwordTextField.backgroundColor = UIColor(red: 94.0/255.0, green: 230.0/255.0, blue: 240.0/255.0, alpha: 0.5)
-        passwordTextField.textColor = UIColor.black
-        passwordTextField.borderStyle = UITextField.BorderStyle.roundedRect
-        passwordTextField.contentVerticalAlignment = UITextField.ContentVerticalAlignment.center
-        passwordTextField.textAlignment = .center
         passwordTextField.placeholder = "password"
         view.addSubview(passwordTextField)
         passwordTextField.snp.makeConstraints { make in
@@ -66,22 +63,39 @@ class ViewController: UIViewController, UITextFieldDelegate {
             make.top.equalTo(emailTextField).inset(50)
         }
         
-        // MARK: - кнопка входа
+        // Create buttonEnter
         
-        let buttonEnter = UIButton()
-        buttonEnter.backgroundColor = .gray
-        buttonEnter.layer.cornerRadius = 20
+        let buttonEnter = UIButton(type: .system)
+        buttonEnter.backgroundColor = .lightGray
+        buttonEnter.layer.cornerRadius = 10
         buttonEnter.setTitleColor(.white, for: .normal)
-        buttonEnter.setTitle("Let's go ->", for: .normal)
+        buttonEnter.setTitle("Enter", for: .normal)
         view.addSubview(buttonEnter)
+        buttonEnter.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
         buttonEnter.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(100)
             make.height.equalTo(40)
             make.top.equalTo(passwordTextField).inset(100)
         }
+    }
+    
+    @objc private func tapButton() {
+        let secondViewController = SecondViewController()
         
-        
+        if emailTextField.text == login && passwordTextField.text == password {
+            someDefault.set(emailTextField.text, forKey: "login")
+            someDefault.set(passwordTextField.text, forKey: "password")
+            navigationController?.pushViewController(secondViewController, animated: true)
+        } else {
+            let alert = UIAlertController(title: "Error", message: "Incorrect login or password", preferredStyle: .actionSheet)
+            let buttonAction = UIAlertAction(title: "Ok", style: .default) { _ in
+                self.emailTextField.text?.removeAll()
+                self.passwordTextField.text?.removeAll()
+            }
+            alert.addAction(buttonAction)
+            present(alert, animated: true, completion: nil)
+        }
     }
     
     //MARK: - UITextFieldDelegate
@@ -94,5 +108,3 @@ class ViewController: UIViewController, UITextFieldDelegate {
         return true
     }
 }
-
-
