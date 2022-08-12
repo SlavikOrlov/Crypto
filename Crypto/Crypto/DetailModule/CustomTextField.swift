@@ -19,7 +19,7 @@ final class CustomTextField: UITextField, UITextFieldDelegate {
     }
     
     required init?(coder: NSCoder) {
-        fatalError("")
+        fatalError("Error")
     }
     
     //MARK: - Private Methods

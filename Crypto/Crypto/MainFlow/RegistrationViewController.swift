@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-final class FirstViewController: UIViewController, UITextFieldDelegate {
+final class RegistrationViewController: UIViewController {
     
     // MARK: - Constants
     
@@ -81,12 +81,12 @@ final class FirstViewController: UIViewController, UITextFieldDelegate {
     }
     
     @objc private func tapButton() {
-        let secondViewController = SecondViewController()
+        let WalletViewController = WalletViewController()
         
         if emailTextField.text == login && passwordTextField.text == password {
             someDefault.set(emailTextField.text, forKey: "login")
             someDefault.set(passwordTextField.text, forKey: "password")
-            navigationController?.pushViewController(secondViewController, animated: true)
+            navigationController?.pushViewController(WalletViewController, animated: true)
         } else {
             let alert = UIAlertController(title: "Error", message: "Incorrect login or password", preferredStyle: .actionSheet)
             let buttonAction = UIAlertAction(title: "Ok", style: .default) { _ in
@@ -97,8 +97,11 @@ final class FirstViewController: UIViewController, UITextFieldDelegate {
             present(alert, animated: true, completion: nil)
         }
     }
-    
-    //MARK: - UITextFieldDelegate
+}
+
+//MARK: - UITextFieldDelegate
+
+extension RegistrationViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("Убрать клавиатуру")

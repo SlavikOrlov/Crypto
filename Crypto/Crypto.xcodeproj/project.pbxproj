@@ -9,16 +9,14 @@
 /* Begin PBXBuildFile section */
 		55570D81288D8E5700C64C7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55570D80288D8E5700C64C7F /* AppDelegate.swift */; };
 		55570D83288D8E5700C64C7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55570D82288D8E5700C64C7F /* SceneDelegate.swift */; };
-		55570D85288D8E5700C64C7F /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55570D84288D8E5700C64C7F /* FirstViewController.swift */; };
+		55570D85288D8E5700C64C7F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55570D84288D8E5700C64C7F /* RegistrationViewController.swift */; };
 		55570D88288D8E5700C64C7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55570D86288D8E5700C64C7F /* Main.storyboard */; };
 		55570D8A288D8E5900C64C7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55570D89288D8E5900C64C7F /* Assets.xcassets */; };
 		55570D8D288D8E5900C64C7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55570D8B288D8E5900C64C7F /* LaunchScreen.storyboard */; };
 		55EABA4728A4446C00D608B1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4628A4446C00D608B1 /* CustomTextField.swift */; };
-		55EABA4E28A44FC000D608B1 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4D28A44FC000D608B1 /* SecondViewController.swift */; };
+		55EABA4E28A44FC000D608B1 /* WalletTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4D28A44FC000D608B1 /* WalletTableViewController.swift */; };
 		55EABA5028A451A100D608B1 /* ExtensionKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4F28A451A100D608B1 /* ExtensionKeyboard.swift */; };
-		55EABA5328A4571D00D608B1 /* ItemSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA5228A4571D00D608B1 /* ItemSecondVC.swift */; };
-		55EABA5528A4580400D608B1 /* ModelSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA5428A4580400D608B1 /* ModelSecondVC.swift */; };
-		55EABA5728A4591D00D608B1 /* ViewCellSecondVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA5628A4591D00D608B1 /* ViewCellSecondVC.swift */; };
+		55EABA5D28A6BE1400D608B1 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA5C28A6BE1400D608B1 /* CustomBackground.swift */; };
 		96C79A6C7459A071D153F362 /* Pods_Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8507C22EF0295F669103329 /* Pods_Crypto.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,17 +25,15 @@
 		55570D7D288D8E5700C64C7F /* Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55570D80288D8E5700C64C7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55570D82288D8E5700C64C7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		55570D84288D8E5700C64C7F /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		55570D84288D8E5700C64C7F /* RegistrationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationViewController.swift; sourceTree = "<group>"; };
 		55570D87288D8E5700C64C7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		55570D89288D8E5900C64C7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55570D8C288D8E5900C64C7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55570D8E288D8E5900C64C7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		55EABA4628A4446C00D608B1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
-		55EABA4D28A44FC000D608B1 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		55EABA4D28A44FC000D608B1 /* WalletTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewController.swift; sourceTree = "<group>"; };
 		55EABA4F28A451A100D608B1 /* ExtensionKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionKeyboard.swift; sourceTree = "<group>"; };
-		55EABA5228A4571D00D608B1 /* ItemSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemSecondVC.swift; sourceTree = "<group>"; };
-		55EABA5428A4580400D608B1 /* ModelSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelSecondVC.swift; sourceTree = "<group>"; };
-		55EABA5628A4591D00D608B1 /* ViewCellSecondVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewCellSecondVC.swift; sourceTree = "<group>"; };
+		55EABA5C28A6BE1400D608B1 /* CustomBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
 		C8507C22EF0295F669103329 /* Pods_Crypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDC3DF8E51E93CAD7DF266B /* Pods-Crypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.release.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,7 +73,6 @@
 			children = (
 				55570D8E288D8E5900C64C7F /* Info.plist */,
 				55EABA4128A4420C00D608B1 /* Application */,
-				55EABA5128A456F500D608B1 /* Model */,
 				55EABA4828A444F700D608B1 /* Extension */,
 				55EABA4028A441F100D608B1 /* DetailModule */,
 				55EABA3F28A441C900D608B1 /* MainFlow */,
@@ -88,8 +83,8 @@
 		55EABA3F28A441C900D608B1 /* MainFlow */ = {
 			isa = PBXGroup;
 			children = (
-				55570D84288D8E5700C64C7F /* FirstViewController.swift */,
-				55EABA4D28A44FC000D608B1 /* SecondViewController.swift */,
+				55570D84288D8E5700C64C7F /* RegistrationViewController.swift */,
+				55EABA4D28A44FC000D608B1 /* WalletTableViewController.swift */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -98,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				55EABA4628A4446C00D608B1 /* CustomTextField.swift */,
+				55EABA5C28A6BE1400D608B1 /* CustomBackground.swift */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";
@@ -120,16 +116,6 @@
 				55EABA4F28A451A100D608B1 /* ExtensionKeyboard.swift */,
 			);
 			path = Extension;
-			sourceTree = "<group>";
-		};
-		55EABA5128A456F500D608B1 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				55EABA5228A4571D00D608B1 /* ItemSecondVC.swift */,
-				55EABA5428A4580400D608B1 /* ModelSecondVC.swift */,
-				55EABA5628A4591D00D608B1 /* ViewCellSecondVC.swift */,
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		70B4FF5E573016361204229C /* Pods */ = {
@@ -265,12 +251,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				55EABA4728A4446C00D608B1 /* CustomTextField.swift in Sources */,
-				55EABA5328A4571D00D608B1 /* ItemSecondVC.swift in Sources */,
-				55EABA4E28A44FC000D608B1 /* SecondViewController.swift in Sources */,
-				55EABA5728A4591D00D608B1 /* ViewCellSecondVC.swift in Sources */,
+				55EABA4E28A44FC000D608B1 /* WalletTableViewController.swift in Sources */,
+				55EABA5D28A6BE1400D608B1 /* CustomBackground.swift in Sources */,
 				55EABA5028A451A100D608B1 /* ExtensionKeyboard.swift in Sources */,
-				55EABA5528A4580400D608B1 /* ModelSecondVC.swift in Sources */,
-				55570D85288D8E5700C64C7F /* FirstViewController.swift in Sources */,
+				55570D85288D8E5700C64C7F /* RegistrationViewController.swift in Sources */,
 				55570D81288D8E5700C64C7F /* AppDelegate.swift in Sources */,
 				55570D83288D8E5700C64C7F /* SceneDelegate.swift in Sources */,
 			);
