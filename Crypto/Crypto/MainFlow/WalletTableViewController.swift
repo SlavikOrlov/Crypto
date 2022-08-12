@@ -23,6 +23,7 @@ class WalletViewController: UIViewController {
         
         configureAppearance()
         walletTableView.reloadData()
+        walletTableView.backgroundColor = UIColor.lightGray
     }
 }
     
@@ -32,6 +33,7 @@ private extension WalletViewController {
         
     func configureAppearance() {
         configureTableView()
+        //background()
     }
         
     func configureTableView() {
@@ -39,7 +41,7 @@ private extension WalletViewController {
         walletTableView.register(UITableViewCell.self, forCellReuseIdentifier: indentifire)
         walletTableView.delegate = self
         walletTableView.dataSource = self
-        walletTableView.backgroundColor = UIColor.red //сделать градиент
+        //walletTableView.backgroundColor = UIColor.red //сделать градиент
             
         walletTableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(walletTableView)

@@ -30,7 +30,7 @@ final class RegistrationViewController: UIViewController {
         self.hideKeyboard()
     }
     
-    // MARK: - Private Methods
+    //MARK: - Private Methods
     
     private func background() {
         let gradientLayer = CAGradientLayer()
@@ -49,6 +49,7 @@ final class RegistrationViewController: UIViewController {
         
         emailTextField.placeholder = "email"
         view.addSubview(emailTextField)
+        
         emailTextField.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(80)
             make.top.equalToSuperview().inset(300)
@@ -58,6 +59,7 @@ final class RegistrationViewController: UIViewController {
         
         passwordTextField.placeholder = "password"
         view.addSubview(passwordTextField)
+        
         passwordTextField.snp.makeConstraints { make in
             make.left.right.equalToSuperview().inset(80)
             make.top.equalTo(emailTextField).inset(50)
@@ -66,12 +68,13 @@ final class RegistrationViewController: UIViewController {
         // Create buttonEnter
         
         let buttonEnter = UIButton(type: .system)
-        buttonEnter.backgroundColor = .lightGray
+        buttonEnter.backgroundColor = CustomColor.buttonColor
         buttonEnter.layer.cornerRadius = 10
         buttonEnter.setTitleColor(.white, for: .normal)
         buttonEnter.setTitle("Enter", for: .normal)
         view.addSubview(buttonEnter)
         buttonEnter.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
+        
         buttonEnter.snp.makeConstraints { make in
             make.centerX.equalToSuperview()
             make.width.equalTo(100)

@@ -16,7 +16,7 @@
 		55EABA4728A4446C00D608B1 /* CustomTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4628A4446C00D608B1 /* CustomTextField.swift */; };
 		55EABA4E28A44FC000D608B1 /* WalletTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4D28A44FC000D608B1 /* WalletTableViewController.swift */; };
 		55EABA5028A451A100D608B1 /* ExtensionKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4F28A451A100D608B1 /* ExtensionKeyboard.swift */; };
-		55EABA5D28A6BE1400D608B1 /* CustomBackground.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA5C28A6BE1400D608B1 /* CustomBackground.swift */; };
+		55EABA5F28A6D6C100D608B1 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA5E28A6D6C100D608B1 /* CustomColor.swift */; };
 		96C79A6C7459A071D153F362 /* Pods_Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8507C22EF0295F669103329 /* Pods_Crypto.framework */; };
 /* End PBXBuildFile section */
 
@@ -33,7 +33,7 @@
 		55EABA4628A4446C00D608B1 /* CustomTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTextField.swift; sourceTree = "<group>"; };
 		55EABA4D28A44FC000D608B1 /* WalletTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewController.swift; sourceTree = "<group>"; };
 		55EABA4F28A451A100D608B1 /* ExtensionKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionKeyboard.swift; sourceTree = "<group>"; };
-		55EABA5C28A6BE1400D608B1 /* CustomBackground.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomBackground.swift; sourceTree = "<group>"; };
+		55EABA5E28A6D6C100D608B1 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		C8507C22EF0295F669103329 /* Pods_Crypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDC3DF8E51E93CAD7DF266B /* Pods-Crypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.release.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -93,7 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				55EABA4628A4446C00D608B1 /* CustomTextField.swift */,
-				55EABA5C28A6BE1400D608B1 /* CustomBackground.swift */,
+				55EABA5E28A6D6C100D608B1 /* CustomColor.swift */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";
@@ -252,10 +252,10 @@
 			files = (
 				55EABA4728A4446C00D608B1 /* CustomTextField.swift in Sources */,
 				55EABA4E28A44FC000D608B1 /* WalletTableViewController.swift in Sources */,
-				55EABA5D28A6BE1400D608B1 /* CustomBackground.swift in Sources */,
 				55EABA5028A451A100D608B1 /* ExtensionKeyboard.swift in Sources */,
 				55570D85288D8E5700C64C7F /* RegistrationViewController.swift in Sources */,
 				55570D81288D8E5700C64C7F /* AppDelegate.swift in Sources */,
+				55EABA5F28A6D6C100D608B1 /* CustomColor.swift in Sources */,
 				55570D83288D8E5700C64C7F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

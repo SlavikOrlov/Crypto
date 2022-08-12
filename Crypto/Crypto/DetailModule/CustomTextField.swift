@@ -25,8 +25,8 @@ final class CustomTextField: UITextField, UITextFieldDelegate {
     //MARK: - Private Methods
     
     private func configureAppearance() {
-        backgroundColor = UIColor(red: 94.0/255.0, green: 230.0/255.0, blue: 240.0/255.0, alpha: 0.5)
-        textColor = UIColor.black
+        backgroundColor = CustomColor.backgroundTextColor
+        textColor = CustomColor.textColor
         borderStyle = UITextField.BorderStyle.roundedRect
         contentVerticalAlignment = UITextField.ContentVerticalAlignment.center
         textAlignment = .center
