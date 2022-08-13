@@ -20,11 +20,12 @@ class WalletViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        background()
         configureAppearance()
         walletTableView.reloadData()
-        walletTableView.backgroundColor = UIColor.lightGray
+        //walletTableView.backgroundColor = CustomColor.gradientLayer
     }
+    
 }
     
 // MARK: - Private Methods
@@ -33,7 +34,12 @@ private extension WalletViewController {
         
     func configureAppearance() {
         configureTableView()
-        //background()
+    }
+    
+    private func background() {
+        let gradientLayer: CAGradientLayer = CustomColor.gradientLayer
+        gradientLayer.frame = view.bounds
+        view.layer.addSublayer(gradientLayer)
     }
         
     func configureTableView() {

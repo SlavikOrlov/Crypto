@@ -33,13 +33,8 @@ final class RegistrationViewController: UIViewController {
     //MARK: - Private Methods
     
     private func background() {
-        let gradientLayer = CAGradientLayer()
+        let gradientLayer: CAGradientLayer = CustomColor.gradientLayer
         gradientLayer.frame = view.bounds
-        gradientLayer.colors = [
-            UIColor(red: 94.0/255.0, green: 230.0/255.0, blue: 240.0/255.0, alpha: 1.0).cgColor,
-            UIColor(red: 154.0/255.0, green: 61.0/255.0, blue: 235.0/255.0, alpha: 1.0).cgColor,
-            UIColor(red: 105.0/255.0, green: 18.0/255.0, blue: 213.0/255.0, alpha: 1.0).cgColor,
-        ]
         view.layer.addSublayer(gradientLayer)
     }
     
