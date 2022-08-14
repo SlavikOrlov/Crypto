@@ -16,15 +16,28 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
 
-        let window = UIWindow(windowScene: windowScene)
+        self.window = UIWindow(windowScene: windowScene)
 
-        let viewController = WalletViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
+        if UserDefaults.standard.bool(forKey: "Log-in"){
 
-        window.rootViewController = navigationController
+            let walletViewController = WalletViewController()
+                window?.rootViewController = walletViewController
+            
+            } else {
 
-        self.window = window
-        window.makeKeyAndVisible()
+                let customLoginView = CustomLoginView()
+                let registrationViewController = RegistrationViewController(customLoginView: customLoginView, user: User.getUser())
+                self.window?.rootViewController = registrationViewController
+                 }
+            self.window?.makeKeyAndVisible()
+    }
+    
+    func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
+        guard let window = self.window else { return }
+        
+        window.rootViewController = vc
+        
+        UIView.transition(with: window, duration: 1, options: [.transitionFlipFromRight], animations: nil, completion: nil)
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

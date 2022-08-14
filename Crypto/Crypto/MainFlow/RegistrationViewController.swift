@@ -6,27 +6,35 @@
 //
 
 import UIKit
-import SnapKit
 
 final class RegistrationViewController: UIViewController {
     
     // MARK: - Constants
     
-    private let emailTextField = CustomTextField()
-    private let passwordTextField = CustomTextField()
-    private let someDefault = UserDefaults.standard
-    private let login = "Slava"
-    private let password = "12345"
+    var customLoginView: CustomLoginView
+    private let user: User
+
+    // MARK: - Initialization
+    
+    init(customLoginView: CustomLoginView, user: User) {
+        self.customLoginView = customLoginView
+        self.user = user
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("Error")
+    }
     
     // MARK: - Lifecyrcle
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         background()
-        configureAppearance()
-        emailTextField.delegate = self
-        passwordTextField.delegate = self
+        addConstraints()
+        customLoginView.emailTextField.delegate = self
+        customLoginView.passwordTextField.delegate = self
+        self.customLoginView.buttonAction = tapButtonEnter
         self.hideKeyboard()
     }
     
@@ -38,62 +46,46 @@ final class RegistrationViewController: UIViewController {
         view.layer.addSublayer(gradientLayer)
     }
     
-    private func configureAppearance() {
+    private func addConstraints() {
+        view.addSubview(customLoginView)
+        customLoginView.translatesAutoresizingMaskIntoConstraints = false
         
-        // Create emailTextField
-        
-        emailTextField.placeholder = "email"
-        view.addSubview(emailTextField)
-        
-        emailTextField.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(80)
-            make.top.equalToSuperview().inset(300)
-        }
-        
-        // Create passwordTextField
-        
-        passwordTextField.placeholder = "password"
-        view.addSubview(passwordTextField)
-        
-        passwordTextField.snp.makeConstraints { make in
-            make.left.right.equalToSuperview().inset(80)
-            make.top.equalTo(emailTextField).inset(50)
-        }
-        
-        // Create buttonEnter
-        
-        let buttonEnter = UIButton(type: .system)
-        buttonEnter.backgroundColor = CustomColor.buttonColor
-        buttonEnter.layer.cornerRadius = 10
-        buttonEnter.setTitleColor(.white, for: .normal)
-        buttonEnter.setTitle("Enter", for: .normal)
-        view.addSubview(buttonEnter)
-        buttonEnter.addTarget(self, action: #selector(tapButton), for: .touchUpInside)
-        
-        buttonEnter.snp.makeConstraints { make in
-            make.centerX.equalToSuperview()
-            make.width.equalTo(100)
-            make.height.equalTo(40)
-            make.top.equalTo(passwordTextField).inset(100)
-        }
+        NSLayoutConstraint.activate([
+            customLoginView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            customLoginView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            customLoginView.topAnchor.constraint(equalTo: view.topAnchor),
+            customLoginView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
     }
     
-    @objc private func tapButton() {
-        let WalletViewController = WalletViewController()
-        
-        if emailTextField.text == login && passwordTextField.text == password {
-            someDefault.set(emailTextField.text, forKey: "login")
-            someDefault.set(passwordTextField.text, forKey: "password")
-            navigationController?.pushViewController(WalletViewController, animated: true)
-        } else {
-            let alert = UIAlertController(title: "Error", message: "Incorrect login or password", preferredStyle: .actionSheet)
-            let buttonAction = UIAlertAction(title: "Ok", style: .default) { _ in
-                self.emailTextField.text?.removeAll()
-                self.passwordTextField.text?.removeAll()
+    private func tapButtonEnter() {
+        guard
+            customLoginView.emailTextField.text == user.login &&
+            customLoginView.passwordTextField.text == user.password
+        else {
+            alert()
+            return
             }
-            alert.addAction(buttonAction)
-            present(alert, animated: true, completion: nil)
+            let walletViewController = WalletViewController()
+            UserDefaults.standard.set(true, forKey: "Logged_in")
+            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(walletViewController)
         }
+    }
+
+// MARK: - UIViewController
+
+extension RegistrationViewController {
+    
+    private func alert() {
+        let alert = UIAlertController(title: "Error", message: "Incorrect login or password", preferredStyle: .actionSheet)
+        let buttonAction = UIAlertAction(title: "OK", style: .cancel,
+                                        handler: { [weak self] _ in
+            guard let self = self else {return}
+            self.customLoginView.emailTextField.text = nil
+            self.customLoginView.passwordTextField.text = nil
+        })
+        alert.addAction(buttonAction)
+        present(alert, animated: true, completion: nil)
     }
 }
 
@@ -103,8 +95,8 @@ extension RegistrationViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         print("Убрать клавиатуру")
-        if textField == passwordTextField {
-            self.passwordTextField.resignFirstResponder()
+        if textField == customLoginView.passwordTextField {
+            self.customLoginView.passwordTextField.resignFirstResponder()
         }
         return true
     }

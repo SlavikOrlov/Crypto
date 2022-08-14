@@ -8,22 +8,28 @@
 
 import UIKit
 
-class WalletViewController: UIViewController {
+class WalletViewController: UIViewController, UIGestureRecognizerDelegate {
     
     // MARK: - Properties
     
     private var walletTableView = UITableView()
     let indentifire = "WalletCell"
     var array = ["1", "2", "3", "4"]
+    //var model: DetailItemModel?
     
     // MARK: - Lifecyrcle
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Wallet"
         background()
         configureAppearance()
         walletTableView.reloadData()
         //walletTableView.backgroundColor = CustomColor.gradientLayer
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        configureNavigationBar()
     }
     
 }
@@ -34,6 +40,7 @@ private extension WalletViewController {
         
     func configureAppearance() {
         configureTableView()
+        configureNavigationBar()
     }
     
     private func background() {
@@ -51,7 +58,18 @@ private extension WalletViewController {
             
         walletTableView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         view.addSubview(walletTableView)
-        }
+    }
+    
+    func configureNavigationBar() {
+        //navigationItem.title = model?.title
+        let backButton = UIBarButtonItem(image: UIImage(named: "back-button"),
+                                         style: .plain,
+                                         target: navigationController,
+                                         action: #selector(UINavigationController.popViewController(animated:)))
+        navigationItem.leftBarButtonItem = backButton
+        navigationItem.leftBarButtonItem?.tintColor = .black
+        navigationController?.interactivePopGestureRecognizer?.delegate = self
+    }
 }
     
     // MARK: - UITableViewDataSource, UITableViewDelegate
