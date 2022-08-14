@@ -8,8 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		5532CBF328A8FE56004F20E5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CBF228A8FE56004F20E5 /* User.swift */; };
-		5532CBF728A927AE004F20E5 /* DetailItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CBF628A927AE004F20E5 /* DetailItemModel.swift */; };
 		5532CBF928A92A00004F20E5 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CBF828A92A00004F20E5 /* DetailTableViewCell.swift */; };
+		5532CBFC28A93D11004F20E5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CBFB28A93D11004F20E5 /* Model.swift */; };
+		5532CBFE28A947A1004F20E5 /* СallerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CBFD28A947A1004F20E5 /* СallerNetwork.swift */; };
 		55570D81288D8E5700C64C7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55570D80288D8E5700C64C7F /* AppDelegate.swift */; };
 		55570D83288D8E5700C64C7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55570D82288D8E5700C64C7F /* SceneDelegate.swift */; };
 		55570D85288D8E5700C64C7F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55570D84288D8E5700C64C7F /* RegistrationViewController.swift */; };
@@ -26,8 +27,9 @@
 /* Begin PBXFileReference section */
 		1C2368F81B69FB48FB8F79D1 /* Pods-Crypto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.debug.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.debug.xcconfig"; sourceTree = "<group>"; };
 		5532CBF228A8FE56004F20E5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5532CBF628A927AE004F20E5 /* DetailItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailItemModel.swift; sourceTree = "<group>"; };
 		5532CBF828A92A00004F20E5 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		5532CBFB28A93D11004F20E5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
+		5532CBFD28A947A1004F20E5 /* СallerNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СallerNetwork.swift"; sourceTree = "<group>"; };
 		55570D7D288D8E5700C64C7F /* Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55570D80288D8E5700C64C7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55570D82288D8E5700C64C7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,23 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		5532CBFA28A93D05004F20E5 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				5532CBFB28A93D11004F20E5 /* Model.swift */,
+				5532CBFD28A947A1004F20E5 /* СallerNetwork.swift */,
+				5532CBF828A92A00004F20E5 /* DetailTableViewCell.swift */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		5532CBFF28A96684004F20E5 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
 		55570D74288D8E5700C64C7F = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +104,8 @@
 		55570D7F288D8E5700C64C7F /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
+				5532CBFF28A96684004F20E5 /* TabBar */,
+				5532CBFA28A93D05004F20E5 /* API */,
 				5532CBF128A8FE38004F20E5 /* Model */,
 				55570D8E288D8E5900C64C7F /* Info.plist */,
 				55EABA4128A4420C00D608B1 /* Application */,
@@ -109,8 +130,6 @@
 			children = (
 				55EABA4628A4446C00D608B1 /* CustomLoginView.swift */,
 				55EABA5E28A6D6C100D608B1 /* CustomColor.swift */,
-				5532CBF628A927AE004F20E5 /* DetailItemModel.swift */,
-				5532CBF828A92A00004F20E5 /* DetailTableViewCell.swift */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";
@@ -270,12 +289,13 @@
 				55EABA4728A4446C00D608B1 /* CustomLoginView.swift in Sources */,
 				55EABA4E28A44FC000D608B1 /* WalletTableViewController.swift in Sources */,
 				55EABA5028A451A100D608B1 /* ExtensionKeyboard.swift in Sources */,
-				5532CBF728A927AE004F20E5 /* DetailItemModel.swift in Sources */,
 				55570D85288D8E5700C64C7F /* RegistrationViewController.swift in Sources */,
 				5532CBF328A8FE56004F20E5 /* User.swift in Sources */,
 				55570D81288D8E5700C64C7F /* AppDelegate.swift in Sources */,
 				55EABA5F28A6D6C100D608B1 /* CustomColor.swift in Sources */,
+				5532CBFC28A93D11004F20E5 /* Model.swift in Sources */,
 				5532CBF928A92A00004F20E5 /* DetailTableViewCell.swift in Sources */,
+				5532CBFE28A947A1004F20E5 /* СallerNetwork.swift in Sources */,
 				55570D83288D8E5700C64C7F /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
