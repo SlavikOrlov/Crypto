@@ -11,12 +11,12 @@ final class RegistrationViewController: UIViewController {
     
     // MARK: - Constants
     
-    var customLoginView: CustomLoginView
+    var customLoginView: CustomView
     private let user: User
-
+    
     // MARK: - Initialization
     
-    init(customLoginView: CustomLoginView, user: User) {
+    init(customLoginView: CustomView, user: User) {
         self.customLoginView = customLoginView
         self.user = user
         super.init(nibName: nil, bundle: nil)
@@ -49,7 +49,6 @@ final class RegistrationViewController: UIViewController {
     private func addConstraints() {
         view.addSubview(customLoginView)
         customLoginView.translatesAutoresizingMaskIntoConstraints = false
-        
         NSLayoutConstraint.activate([
             customLoginView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
             customLoginView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -65,21 +64,27 @@ final class RegistrationViewController: UIViewController {
         else {
             alert()
             return
-            }
-            let walletViewController = WalletViewController()
-            UserDefaults.standard.set(true, forKey: "Logged_in")
-            (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(walletViewController)
         }
+        let walletViewController = WalletViewController()
+        UserDefaults.standard.set(true, forKey: "123")
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(walletViewController)
     }
+}
 
 // MARK: - UIViewController
 
 extension RegistrationViewController {
     
     private func alert() {
-        let alert = UIAlertController(title: "Error", message: "Incorrect login or password", preferredStyle: .actionSheet)
-        let buttonAction = UIAlertAction(title: "OK", style: .cancel,
-                                        handler: { [weak self] _ in
+        let alert = UIAlertController(
+            title: "Error",
+            message: "Incorrect login or password",
+            preferredStyle: .actionSheet
+        )
+        let buttonAction = UIAlertAction(
+            title: "OK",
+            style: .cancel,
+            handler: { [weak self] _ in
             guard let self = self else {return}
             self.customLoginView.emailTextField.text = nil
             self.customLoginView.passwordTextField.text = nil
@@ -94,9 +99,10 @@ extension RegistrationViewController {
 extension RegistrationViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        print("Убрать клавиатуру")
-        if textField == customLoginView.passwordTextField {
-            self.customLoginView.passwordTextField.resignFirstResponder()
+        if textField == customLoginView.emailTextField {
+            customLoginView.passwordTextField.becomeFirstResponder()
+        } else {
+            customLoginView.passwordTextField.resignFirstResponder()
         }
         return true
     }

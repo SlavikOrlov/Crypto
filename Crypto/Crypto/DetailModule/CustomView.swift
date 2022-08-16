@@ -1,5 +1,5 @@
 //
-//  CustomLoginView.swift
+//  CustomView.swift
 //  Crypto
 //
 //  Created by Slava Orlov on 10.08.2022.
@@ -8,9 +8,9 @@
 import Foundation
 import UIKit
 
-final class CustomLoginView: UIView {
+final class CustomView: UIView {
     
-    var buttonAction: (() -> Void)?
+    var buttonAction: (() -> Void)?    
     
     // MARK: - Initialization
     
@@ -34,7 +34,10 @@ final class CustomLoginView: UIView {
         textField.layer.cornerRadius = 20
         textField.backgroundColor = CustomColor.backgroundTextColor
         textField.textColor = CustomColor.textColor
-        textField.placeholder = "email"
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "login",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
         textField.textAlignment = .center
         textField.clearButtonMode = .always
         return textField
@@ -42,11 +45,13 @@ final class CustomLoginView: UIView {
     
     let passwordTextField: UITextField = {
         let textField = UITextField()
-        //textField.borderStyle = .none
         textField.layer.cornerRadius = 20
         textField.backgroundColor = CustomColor.backgroundTextColor
         textField.textColor = CustomColor.textColor
-        textField.placeholder = "password"
+        textField.attributedPlaceholder = NSAttributedString(
+            string: "password",
+            attributes: [NSAttributedString.Key.foregroundColor: UIColor.gray]
+        )
         textField.textAlignment = .center
         textField.clearButtonMode = .always
         return textField
@@ -56,7 +61,7 @@ final class CustomLoginView: UIView {
         let button = UIButton()
         button.backgroundColor = CustomColor.buttonColor
         button.layer.cornerRadius = 20
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.setTitle("Enter", for: .normal)
         button.addTarget(self, action: #selector(tapButtonEnter), for: .touchUpInside)
         return button
@@ -85,14 +90,15 @@ final class CustomLoginView: UIView {
         NSLayoutConstraint.activate([
             verticalStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
             verticalStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
-            verticalStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 300),
+            verticalStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 450),
             buttonEnter.heightAnchor.constraint(equalToConstant: 40),
             passwordTextField.heightAnchor.constraint(equalToConstant: 40),
-            emailTextField.heightAnchor.constraint(equalToConstant: 40)
+            emailTextField.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
     
     @objc func tapButtonEnter() {
         buttonAction?()
     }
+    
 }

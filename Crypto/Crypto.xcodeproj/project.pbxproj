@@ -7,17 +7,26 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5532CBF328A8FE56004F20E5 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CBF228A8FE56004F20E5 /* User.swift */; };
-		5532CBF928A92A00004F20E5 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CBF828A92A00004F20E5 /* DetailTableViewCell.swift */; };
-		5532CBFC28A93D11004F20E5 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CBFB28A93D11004F20E5 /* Model.swift */; };
-		5532CBFE28A947A1004F20E5 /* СallerNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5532CBFD28A947A1004F20E5 /* СallerNetwork.swift */; };
 		55570D81288D8E5700C64C7F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55570D80288D8E5700C64C7F /* AppDelegate.swift */; };
 		55570D83288D8E5700C64C7F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55570D82288D8E5700C64C7F /* SceneDelegate.swift */; };
 		55570D85288D8E5700C64C7F /* RegistrationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55570D84288D8E5700C64C7F /* RegistrationViewController.swift */; };
 		55570D88288D8E5700C64C7F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55570D86288D8E5700C64C7F /* Main.storyboard */; };
 		55570D8A288D8E5900C64C7F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55570D89288D8E5900C64C7F /* Assets.xcassets */; };
 		55570D8D288D8E5900C64C7F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55570D8B288D8E5900C64C7F /* LaunchScreen.storyboard */; };
-		55EABA4728A4446C00D608B1 /* CustomLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4628A4446C00D608B1 /* CustomLoginView.swift */; };
+		5568E8AD28AA9F97008C2A50 /* MainTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8AC28AA9F97008C2A50 /* MainTabBarController.swift */; };
+		5568E8AF28AA9FAC008C2A50 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8AE28AA9FAC008C2A50 /* User.swift */; };
+		5568E8B128AA9FB6008C2A50 /* CoinsModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8B028AA9FB6008C2A50 /* CoinsModel.swift */; };
+		5568E8B328AA9FC2008C2A50 /* OneCoinModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8B228AA9FC2008C2A50 /* OneCoinModel.swift */; };
+		5568E8B528AA9FCA008C2A50 /* SortBy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8B428AA9FCA008C2A50 /* SortBy.swift */; };
+		5568E8B728AA9FF3008C2A50 /* DataExtraction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8B628AA9FF3008C2A50 /* DataExtraction.swift */; };
+		5568E8B928AA9FFF008C2A50 /* NetworkDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8B828AA9FFF008C2A50 /* NetworkDate.swift */; };
+		5568E8BB28AAA010008C2A50 /* BaseNetworkTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8BA28AAA010008C2A50 /* BaseNetworkTask.swift */; };
+		5568E8BD28AAA052008C2A50 /* BonusViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8BC28AAA052008C2A50 /* BonusViewController.swift */; };
+		5568E8BF28AAA068008C2A50 /* DetailCoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8BE28AAA068008C2A50 /* DetailCoinsViewController.swift */; };
+		5568E8C128AAA08A008C2A50 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8C028AAA08A008C2A50 /* DetailTableViewCell.swift */; };
+		5568E8C328AAA09F008C2A50 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8C228AAA09F008C2A50 /* ProfileViewController.swift */; };
+		5568E8C528AAA223008C2A50 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8C428AAA223008C2A50 /* CustomView.swift */; };
+		5568E8C728AAA238008C2A50 /* SortViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8C628AAA238008C2A50 /* SortViewCell.swift */; };
 		55EABA4E28A44FC000D608B1 /* WalletTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4D28A44FC000D608B1 /* WalletTableViewController.swift */; };
 		55EABA5028A451A100D608B1 /* ExtensionKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4F28A451A100D608B1 /* ExtensionKeyboard.swift */; };
 		55EABA5F28A6D6C100D608B1 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA5E28A6D6C100D608B1 /* CustomColor.swift */; };
@@ -26,10 +35,6 @@
 
 /* Begin PBXFileReference section */
 		1C2368F81B69FB48FB8F79D1 /* Pods-Crypto.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.debug.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.debug.xcconfig"; sourceTree = "<group>"; };
-		5532CBF228A8FE56004F20E5 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
-		5532CBF828A92A00004F20E5 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
-		5532CBFB28A93D11004F20E5 /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
-		5532CBFD28A947A1004F20E5 /* СallerNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "СallerNetwork.swift"; sourceTree = "<group>"; };
 		55570D7D288D8E5700C64C7F /* Crypto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Crypto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55570D80288D8E5700C64C7F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55570D82288D8E5700C64C7F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -38,7 +43,20 @@
 		55570D89288D8E5900C64C7F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		55570D8C288D8E5900C64C7F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		55570D8E288D8E5900C64C7F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		55EABA4628A4446C00D608B1 /* CustomLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomLoginView.swift; sourceTree = "<group>"; };
+		5568E8AC28AA9F97008C2A50 /* MainTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarController.swift; sourceTree = "<group>"; };
+		5568E8AE28AA9FAC008C2A50 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		5568E8B028AA9FB6008C2A50 /* CoinsModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoinsModel.swift; sourceTree = "<group>"; };
+		5568E8B228AA9FC2008C2A50 /* OneCoinModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OneCoinModel.swift; sourceTree = "<group>"; };
+		5568E8B428AA9FCA008C2A50 /* SortBy.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortBy.swift; sourceTree = "<group>"; };
+		5568E8B628AA9FF3008C2A50 /* DataExtraction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtraction.swift; sourceTree = "<group>"; };
+		5568E8B828AA9FFF008C2A50 /* NetworkDate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDate.swift; sourceTree = "<group>"; };
+		5568E8BA28AAA010008C2A50 /* BaseNetworkTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNetworkTask.swift; sourceTree = "<group>"; };
+		5568E8BC28AAA052008C2A50 /* BonusViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BonusViewController.swift; sourceTree = "<group>"; };
+		5568E8BE28AAA068008C2A50 /* DetailCoinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoinsViewController.swift; sourceTree = "<group>"; };
+		5568E8C028AAA08A008C2A50 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		5568E8C228AAA09F008C2A50 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		5568E8C428AAA223008C2A50 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		5568E8C628AAA238008C2A50 /* SortViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewCell.swift; sourceTree = "<group>"; };
 		55EABA4D28A44FC000D608B1 /* WalletTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewController.swift; sourceTree = "<group>"; };
 		55EABA4F28A451A100D608B1 /* ExtensionKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionKeyboard.swift; sourceTree = "<group>"; };
 		55EABA5E28A6D6C100D608B1 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
@@ -58,37 +76,12 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		5532CBF128A8FE38004F20E5 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				5532CBF228A8FE56004F20E5 /* User.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		5532CBFA28A93D05004F20E5 /* API */ = {
-			isa = PBXGroup;
-			children = (
-				5532CBFB28A93D11004F20E5 /* Model.swift */,
-				5532CBFD28A947A1004F20E5 /* СallerNetwork.swift */,
-				5532CBF828A92A00004F20E5 /* DetailTableViewCell.swift */,
-			);
-			path = API;
-			sourceTree = "<group>";
-		};
-		5532CBFF28A96684004F20E5 /* TabBar */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = TabBar;
-			sourceTree = "<group>";
-		};
 		55570D74288D8E5700C64C7F = {
 			isa = PBXGroup;
 			children = (
 				55570D7F288D8E5700C64C7F /* Crypto */,
-				55570D7E288D8E5700C64C7F /* Products */,
 				70B4FF5E573016361204229C /* Pods */,
+				55570D7E288D8E5700C64C7F /* Products */,
 				FD099BEBD80E843858669BF9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
@@ -104,9 +97,9 @@
 		55570D7F288D8E5700C64C7F /* Crypto */ = {
 			isa = PBXGroup;
 			children = (
-				5532CBFF28A96684004F20E5 /* TabBar */,
-				5532CBFA28A93D05004F20E5 /* API */,
-				5532CBF128A8FE38004F20E5 /* Model */,
+				55D1920128AA9E5B00162510 /* Model */,
+				55D1920028AA9E5000162510 /* TabBar */,
+				55D191FF28AA9E4700162510 /* Services */,
 				55570D8E288D8E5900C64C7F /* Info.plist */,
 				55EABA4128A4420C00D608B1 /* Application */,
 				55EABA4828A444F700D608B1 /* Extension */,
@@ -116,11 +109,77 @@
 			path = Crypto;
 			sourceTree = "<group>";
 		};
-		55EABA3F28A441C900D608B1 /* MainFlow */ = {
+		5568E8CC28AACAF5008C2A50 /* RegistrationViewController */ = {
 			isa = PBXGroup;
 			children = (
 				55570D84288D8E5700C64C7F /* RegistrationViewController.swift */,
+			);
+			path = RegistrationViewController;
+			sourceTree = "<group>";
+		};
+		5568E8CD28AACB0C008C2A50 /* WalletViewController */ = {
+			isa = PBXGroup;
+			children = (
 				55EABA4D28A44FC000D608B1 /* WalletTableViewController.swift */,
+				5568E8C028AAA08A008C2A50 /* DetailTableViewCell.swift */,
+				5568E8CE28AACB65008C2A50 /* DetailInfoViewController */,
+			);
+			path = WalletViewController;
+			sourceTree = "<group>";
+		};
+		5568E8CE28AACB65008C2A50 /* DetailInfoViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5568E8BE28AAA068008C2A50 /* DetailCoinsViewController.swift */,
+				5568E8BC28AAA052008C2A50 /* BonusViewController.swift */,
+				5568E8C628AAA238008C2A50 /* SortViewCell.swift */,
+			);
+			path = DetailInfoViewController;
+			sourceTree = "<group>";
+		};
+		5568E8CF28AACBA9008C2A50 /* ProfileViewController */ = {
+			isa = PBXGroup;
+			children = (
+				5568E8C228AAA09F008C2A50 /* ProfileViewController.swift */,
+			);
+			path = ProfileViewController;
+			sourceTree = "<group>";
+		};
+		55D191FF28AA9E4700162510 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				5568E8B628AA9FF3008C2A50 /* DataExtraction.swift */,
+				5568E8B828AA9FFF008C2A50 /* NetworkDate.swift */,
+				5568E8BA28AAA010008C2A50 /* BaseNetworkTask.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		55D1920028AA9E5000162510 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				5568E8AC28AA9F97008C2A50 /* MainTabBarController.swift */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		55D1920128AA9E5B00162510 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5568E8AE28AA9FAC008C2A50 /* User.swift */,
+				5568E8B028AA9FB6008C2A50 /* CoinsModel.swift */,
+				5568E8B228AA9FC2008C2A50 /* OneCoinModel.swift */,
+				5568E8B428AA9FCA008C2A50 /* SortBy.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		55EABA3F28A441C900D608B1 /* MainFlow */ = {
+			isa = PBXGroup;
+			children = (
+				5568E8CC28AACAF5008C2A50 /* RegistrationViewController */,
+				5568E8CD28AACB0C008C2A50 /* WalletViewController */,
+				5568E8CF28AACBA9008C2A50 /* ProfileViewController */,
 			);
 			path = MainFlow;
 			sourceTree = "<group>";
@@ -128,8 +187,8 @@
 		55EABA4028A441F100D608B1 /* DetailModule */ = {
 			isa = PBXGroup;
 			children = (
-				55EABA4628A4446C00D608B1 /* CustomLoginView.swift */,
 				55EABA5E28A6D6C100D608B1 /* CustomColor.swift */,
+				5568E8C428AAA223008C2A50 /* CustomView.swift */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";
@@ -286,17 +345,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				55EABA4728A4446C00D608B1 /* CustomLoginView.swift in Sources */,
+				5568E8C128AAA08A008C2A50 /* DetailTableViewCell.swift in Sources */,
+				5568E8BB28AAA010008C2A50 /* BaseNetworkTask.swift in Sources */,
+				5568E8C728AAA238008C2A50 /* SortViewCell.swift in Sources */,
 				55EABA4E28A44FC000D608B1 /* WalletTableViewController.swift in Sources */,
+				5568E8B128AA9FB6008C2A50 /* CoinsModel.swift in Sources */,
+				5568E8AD28AA9F97008C2A50 /* MainTabBarController.swift in Sources */,
 				55EABA5028A451A100D608B1 /* ExtensionKeyboard.swift in Sources */,
+				5568E8BF28AAA068008C2A50 /* DetailCoinsViewController.swift in Sources */,
 				55570D85288D8E5700C64C7F /* RegistrationViewController.swift in Sources */,
-				5532CBF328A8FE56004F20E5 /* User.swift in Sources */,
+				5568E8C328AAA09F008C2A50 /* ProfileViewController.swift in Sources */,
+				5568E8B528AA9FCA008C2A50 /* SortBy.swift in Sources */,
+				5568E8AF28AA9FAC008C2A50 /* User.swift in Sources */,
 				55570D81288D8E5700C64C7F /* AppDelegate.swift in Sources */,
+				5568E8BD28AAA052008C2A50 /* BonusViewController.swift in Sources */,
 				55EABA5F28A6D6C100D608B1 /* CustomColor.swift in Sources */,
-				5532CBFC28A93D11004F20E5 /* Model.swift in Sources */,
-				5532CBF928A92A00004F20E5 /* DetailTableViewCell.swift in Sources */,
-				5532CBFE28A947A1004F20E5 /* СallerNetwork.swift in Sources */,
 				55570D83288D8E5700C64C7F /* SceneDelegate.swift in Sources */,
+				5568E8B328AA9FC2008C2A50 /* OneCoinModel.swift in Sources */,
+				5568E8B928AA9FFF008C2A50 /* NetworkDate.swift in Sources */,
+				5568E8B728AA9FF3008C2A50 /* DataExtraction.swift in Sources */,
+				5568E8C528AAA223008C2A50 /* CustomView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -448,7 +516,6 @@
 				INFOPLIST_FILE = Crypto/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -476,7 +543,6 @@
 				INFOPLIST_FILE = Crypto/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
