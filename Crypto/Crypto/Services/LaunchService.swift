@@ -28,9 +28,9 @@ private extension LaunchService {
     }
     
     func getRegistration() -> UIViewController {
-        let customLoginView = CustomRegistrationView()
+        let customRegistrationView = CustomRegistrationView()
         return RegistrationViewController(
-            customLoginView: customLoginView,
+            customRegistrationView: customRegistrationView,
             user: User.getUser()
         )
     }

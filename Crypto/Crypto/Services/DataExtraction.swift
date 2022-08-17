@@ -20,11 +20,17 @@ class DataExtraction {
     // Декордируем JSON данные в конкретную модель
     func getCoins (completion: @escaping (CoinsModel?) -> Void) {
         let urlCoins = "https://data.messari.io/api/v1/assets"
-        dataFetcher.fetchGenericJSONData(urlString: urlCoins, response: completion)
+        dataFetcher.fetchGenericJSONData(
+            urlString: urlCoins,
+            response: completion
+        )
     }
     
     func getOneCoin (symbol: String, completion: @escaping (OneCoinModel?) -> Void) {
         let urlOneCoin = "https://data.messari.io/api/v1/assets/\(symbol)/profile"
-        dataFetcher.fetchGenericJSONData(urlString: urlOneCoin, response: completion)
+        dataFetcher.fetchGenericJSONData(
+            urlString: urlOneCoin,
+            response: completion
+        )
     }
 }

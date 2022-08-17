@@ -16,8 +16,8 @@ final class RegistrationViewController: UIViewController {
     
     // MARK: - Initialization
     
-    init(customLoginView: CustomRegistrationView, user: User) {
-        self.customRegistrationView = customLoginView
+    init(customRegistrationView: CustomRegistrationView, user: User) {
+        self.customRegistrationView = customRegistrationView
         self.user = user
         super.init(nibName: nil, bundle: nil)
     }

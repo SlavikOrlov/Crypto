@@ -25,7 +25,13 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func changeRootViewController(_ vc: UIViewController, animated: Bool = true) {
         guard let window = self.window else { return }
         window.rootViewController = vc
-        UIView.transition(with: window, duration: 1, options: [.transitionFlipFromRight], animations: nil, completion: nil)
+        UIView.transition(
+            with: window,
+            duration: 1,
+            options: [.transitionFlipFromRight],
+            animations: nil,
+            completion: nil
+        )
     }
     
 }

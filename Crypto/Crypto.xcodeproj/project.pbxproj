@@ -31,7 +31,6 @@
 		55EABA5028A451A100D608B1 /* ExtensionKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4F28A451A100D608B1 /* ExtensionKeyboard.swift */; };
 		55EABA5F28A6D6C100D608B1 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA5E28A6D6C100D608B1 /* CustomColor.swift */; };
 		55EFF0FA28AD3D23009633BF /* LaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF0F928AD3D23009633BF /* LaunchService.swift */; };
-		55EFF0FC28AD3E7A009633BF /* CustomProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF0FB28AD3E7A009633BF /* CustomProfileView.swift */; };
 		96C79A6C7459A071D153F362 /* Pods_Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8507C22EF0295F669103329 /* Pods_Crypto.framework */; };
 /* End PBXBuildFile section */
 
@@ -63,7 +62,6 @@
 		55EABA4F28A451A100D608B1 /* ExtensionKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionKeyboard.swift; sourceTree = "<group>"; };
 		55EABA5E28A6D6C100D608B1 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
 		55EFF0F928AD3D23009633BF /* LaunchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchService.swift; sourceTree = "<group>"; };
-		55EFF0FB28AD3E7A009633BF /* CustomProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProfileView.swift; sourceTree = "<group>"; };
 		C8507C22EF0295F669103329 /* Pods_Crypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDC3DF8E51E93CAD7DF266B /* Pods-Crypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.release.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -194,7 +192,6 @@
 			children = (
 				55EABA5E28A6D6C100D608B1 /* CustomColor.swift */,
 				5568E8C428AAA223008C2A50 /* CustomRegistrationView.swift */,
-				55EFF0FB28AD3E7A009633BF /* CustomProfileView.swift */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";
@@ -352,7 +349,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5568E8C128AAA08A008C2A50 /* DetailTableViewCell.swift in Sources */,
-				55EFF0FC28AD3E7A009633BF /* CustomProfileView.swift in Sources */,
 				5568E8BB28AAA010008C2A50 /* BaseNetworkTask.swift in Sources */,
 				5568E8C728AAA238008C2A50 /* SortViewCell.swift in Sources */,
 				55EABA4E28A44FC000D608B1 /* WalletTableViewController.swift in Sources */,

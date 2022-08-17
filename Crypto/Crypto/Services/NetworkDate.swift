@@ -8,7 +8,10 @@
 import Foundation
 
 protocol DataFetcher {
-    func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping (T?) -> Void)
+    func fetchGenericJSONData<T: Decodable>(
+        urlString: String,
+        response: @escaping (T?) -> Void
+    )
 }
 
 // Декодирование полученных данных в конкретную модель

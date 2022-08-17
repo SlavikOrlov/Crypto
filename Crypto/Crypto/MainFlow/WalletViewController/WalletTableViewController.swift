@@ -43,13 +43,17 @@ class WalletViewController: UIViewController {
     // MARK: - Private Methods
     
     private func setupNavigation() {
-        let sortButton = UIBarButtonItem(image: UIImage(named: "searchTab"), style: .plain, target: self, action: #selector(presentModalController))
+        let sortButton = UIBarButtonItem(
+            image: UIImage(named: "sortTab"),
+            style: .plain,
+            target: self,
+            action: #selector(presentModalController)
+        )
         navigationItem.rightBarButtonItem = sortButton
         navigationController?.navigationBar.tintColor = .black
 
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
-
         navigationController?.navigationBar.standardAppearance = appearance
     }
     
@@ -72,9 +76,6 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
         let coin = coins[indexPath.row]
         cell.configure(with: coin)
         cell.backgroundColor = CustomColor.backgroundTextColor
-        //        if indexPath.row % 2 != 0 {
-        //            cell.backgroundColor = CustomColor.backgroundTextColor
-        //        }
         return cell
     }
     
@@ -105,7 +106,13 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let header = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 50))
+        let header = UIView(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: view.frame.size.width,
+                height: 50)
+        )
         header.backgroundColor = CustomColor.backgroundHeaderColor
         
         let firstNameLabel = UILabel(

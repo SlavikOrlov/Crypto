@@ -20,7 +20,6 @@ final class MainTabBarController: UITabBarController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
         self.tabBar.barTintColor = CustomColor.backgroundTableViewColor
     }
     

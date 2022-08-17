@@ -17,7 +17,11 @@ class ProfileViewController: UIViewController {
         button.setTitle("Exit to Registration", for: .normal)
         button.layer.cornerRadius = 20
         button.backgroundColor = CustomColor.buttonColor
-        button.addTarget(self, action: #selector(tapLogOutButtonEnter), for: .touchUpInside)
+        button.addTarget(
+            self,
+            action: #selector(tapLogOutButtonEnter),
+            for: .touchUpInside
+        )
         return button
     }()
     
@@ -36,7 +40,7 @@ class ProfileViewController: UIViewController {
     private func addConstraints() {
         logOutButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            logOutButton.widthAnchor.constraint(equalToConstant: 60),
+            logOutButton.widthAnchor.constraint(equalToConstant: 200),
             logOutButton.heightAnchor.constraint(equalToConstant: 40),
             logOutButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             logOutButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
@@ -45,7 +49,7 @@ class ProfileViewController: UIViewController {
     
     @objc func tapLogOutButtonEnter() {
         let registrationViewController = RegistrationViewController(
-            customLoginView: CustomRegistrationView(),
+            customRegistrationView: CustomRegistrationView(),
             user: User.getUser()
         )
         UserDefaults.standard.set(false, forKey: "123")

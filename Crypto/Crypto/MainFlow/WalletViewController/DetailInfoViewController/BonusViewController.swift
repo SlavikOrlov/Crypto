@@ -34,6 +34,7 @@ class BonusViewController: UIViewController {
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         tableView.frame = view.bounds
+        tableView.backgroundColor = CustomColor.backgroundTableViewColor
     }
 }
 
@@ -49,6 +50,7 @@ extension BonusViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: SortViewCell.identifier, for: indexPath)
         if let sortOption = SortBy(index: indexPath.row) {
             cell.textLabel?.text = sortOption.description
+            cell.backgroundColor = CustomColor.backgroundTextColor
         
             if let objects = UserDefaults.standard.object(forKey: "selectedIndex") {
                 let selectedIndex = UserDefaults.standard.integer(forKey: "selectedIndex")
@@ -63,7 +65,6 @@ extension BonusViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // check current cell
         let cell = tableView.cellForRow(at: indexPath)
         cell?.accessoryType = .checkmark
         cell?.backgroundColor = CustomColor.backgroundTextColor

@@ -66,7 +66,8 @@ class DetailTableViewCell: UITableViewCell {
             x: 60 + priceLabel.frame.maxX,
             y: 5,
             width: 60,
-            height: contentView.frame.size.height - 10)
+            height: contentView.frame.size.height - 10
+        )
     }
     
     //MARK: - Private Methods

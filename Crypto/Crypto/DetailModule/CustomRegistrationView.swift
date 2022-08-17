@@ -63,7 +63,11 @@ final class CustomRegistrationView: UIView {
         button.layer.cornerRadius = 20
         button.setTitleColor(.black, for: .normal)
         button.setTitle("Enter", for: .normal)
-        button.addTarget(self, action: #selector(tapButtonEnter), for: .touchUpInside)
+        button.addTarget(
+            self,
+            action: #selector(tapButtonEnter),
+            for: .touchUpInside
+        )
         return button
 }()
     
@@ -72,7 +76,6 @@ final class CustomRegistrationView: UIView {
         stackView.axis = .vertical
         stackView.distribution = .fillProportionally
         stackView.spacing = 20
-        
         return stackView
     }()
     
