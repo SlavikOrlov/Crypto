@@ -10,7 +10,7 @@ import UIKit
 class ProfileViewController: UIViewController {
     
     // MARK: - Constants
-    
+        
     private let logOutButton: UIButton = {
         let button = UIButton()
         button.setTitleColor(.black, for: .normal)
@@ -45,7 +45,7 @@ class ProfileViewController: UIViewController {
     
     @objc func tapLogOutButtonEnter() {
         let registrationViewController = RegistrationViewController(
-            customLoginView: CustomView(),
+            customLoginView: CustomRegistrationView(),
             user: User.getUser()
         )
         UserDefaults.standard.set(false, forKey: "123")

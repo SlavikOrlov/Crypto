@@ -11,13 +11,13 @@ final class RegistrationViewController: UIViewController {
     
     // MARK: - Constants
     
-    var customLoginView: CustomView
+    var customRegistrationView: CustomRegistrationView
     private let user: User
     
     // MARK: - Initialization
     
-    init(customLoginView: CustomView, user: User) {
-        self.customLoginView = customLoginView
+    init(customLoginView: CustomRegistrationView, user: User) {
+        self.customRegistrationView = customLoginView
         self.user = user
         super.init(nibName: nil, bundle: nil)
     }
@@ -32,9 +32,9 @@ final class RegistrationViewController: UIViewController {
         super.viewDidLoad()
         background()
         addConstraints()
-        customLoginView.emailTextField.delegate = self
-        customLoginView.passwordTextField.delegate = self
-        self.customLoginView.buttonAction = tapButtonEnter
+        customRegistrationView.emailTextField.delegate = self
+        customRegistrationView.passwordTextField.delegate = self
+        self.customRegistrationView.buttonAction = tapButtonEnter
         self.hideKeyboard()
     }
     
@@ -47,27 +47,28 @@ final class RegistrationViewController: UIViewController {
     }
     
     private func addConstraints() {
-        view.addSubview(customLoginView)
-        customLoginView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(customRegistrationView)
+        customRegistrationView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            customLoginView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            customLoginView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            customLoginView.topAnchor.constraint(equalTo: view.topAnchor),
-            customLoginView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            customRegistrationView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            customRegistrationView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            customRegistrationView.topAnchor.constraint(equalTo: view.topAnchor),
+            customRegistrationView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
         ])
     }
     
     private func tapButtonEnter() {
         guard
-            customLoginView.emailTextField.text == user.login &&
-            customLoginView.passwordTextField.text == user.password
+            customRegistrationView.emailTextField.text == user.login &&
+            customRegistrationView.passwordTextField.text == user.password
         else {
             alert()
             return
         }
-        let walletViewController = WalletViewController()
+
+        let tabBar = MainTabBarController()
         UserDefaults.standard.set(true, forKey: "123")
-        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(walletViewController)
+        (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabBar)
     }
 }
 
@@ -86,8 +87,8 @@ extension RegistrationViewController {
             style: .cancel,
             handler: { [weak self] _ in
             guard let self = self else {return}
-            self.customLoginView.emailTextField.text = nil
-            self.customLoginView.passwordTextField.text = nil
+            self.customRegistrationView.emailTextField.text = nil
+            self.customRegistrationView.passwordTextField.text = nil
         })
         alert.addAction(buttonAction)
         present(alert, animated: true, completion: nil)
@@ -99,10 +100,10 @@ extension RegistrationViewController {
 extension RegistrationViewController: UITextFieldDelegate {
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        if textField == customLoginView.emailTextField {
-            customLoginView.passwordTextField.becomeFirstResponder()
+        if textField == customRegistrationView.emailTextField {
+            customRegistrationView.passwordTextField.becomeFirstResponder()
         } else {
-            customLoginView.passwordTextField.resignFirstResponder()
+            customRegistrationView.passwordTextField.resignFirstResponder()
         }
         return true
     }

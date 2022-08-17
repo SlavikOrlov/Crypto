@@ -19,7 +19,7 @@ class BaseNetworkTask: Networking {
         guard let url = URL(string: urlString) else { return }
         
         var request = URLRequest(url: url)
-        request.addValue("38a9ade2-470a-4c0c-9554-324414b0e831",
+        request.addValue("9793eae6-f374-46b4-8764-c2d224429791",
                          forHTTPHeaderField: "x-messari-api-key")
         let task = createDataTask(from: request, completion: completion)
         task.resume()

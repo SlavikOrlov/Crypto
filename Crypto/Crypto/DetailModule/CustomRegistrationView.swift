@@ -1,5 +1,5 @@
 //
-//  CustomView.swift
+//  CustomRegistrationView.swift
 //  Crypto
 //
 //  Created by Slava Orlov on 10.08.2022.
@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-final class CustomView: UIView {
+final class CustomRegistrationView: UIView {
     
     var buttonAction: (() -> Void)?    
     

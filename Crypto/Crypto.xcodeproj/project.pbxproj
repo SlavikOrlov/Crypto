@@ -25,11 +25,13 @@
 		5568E8BF28AAA068008C2A50 /* DetailCoinsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8BE28AAA068008C2A50 /* DetailCoinsViewController.swift */; };
 		5568E8C128AAA08A008C2A50 /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8C028AAA08A008C2A50 /* DetailTableViewCell.swift */; };
 		5568E8C328AAA09F008C2A50 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8C228AAA09F008C2A50 /* ProfileViewController.swift */; };
-		5568E8C528AAA223008C2A50 /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8C428AAA223008C2A50 /* CustomView.swift */; };
+		5568E8C528AAA223008C2A50 /* CustomRegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8C428AAA223008C2A50 /* CustomRegistrationView.swift */; };
 		5568E8C728AAA238008C2A50 /* SortViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5568E8C628AAA238008C2A50 /* SortViewCell.swift */; };
 		55EABA4E28A44FC000D608B1 /* WalletTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4D28A44FC000D608B1 /* WalletTableViewController.swift */; };
 		55EABA5028A451A100D608B1 /* ExtensionKeyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA4F28A451A100D608B1 /* ExtensionKeyboard.swift */; };
 		55EABA5F28A6D6C100D608B1 /* CustomColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EABA5E28A6D6C100D608B1 /* CustomColor.swift */; };
+		55EFF0FA28AD3D23009633BF /* LaunchService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF0F928AD3D23009633BF /* LaunchService.swift */; };
+		55EFF0FC28AD3E7A009633BF /* CustomProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EFF0FB28AD3E7A009633BF /* CustomProfileView.swift */; };
 		96C79A6C7459A071D153F362 /* Pods_Crypto.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C8507C22EF0295F669103329 /* Pods_Crypto.framework */; };
 /* End PBXBuildFile section */
 
@@ -55,11 +57,13 @@
 		5568E8BE28AAA068008C2A50 /* DetailCoinsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailCoinsViewController.swift; sourceTree = "<group>"; };
 		5568E8C028AAA08A008C2A50 /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
 		5568E8C228AAA09F008C2A50 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		5568E8C428AAA223008C2A50 /* CustomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		5568E8C428AAA223008C2A50 /* CustomRegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomRegistrationView.swift; sourceTree = "<group>"; };
 		5568E8C628AAA238008C2A50 /* SortViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SortViewCell.swift; sourceTree = "<group>"; };
 		55EABA4D28A44FC000D608B1 /* WalletTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletTableViewController.swift; sourceTree = "<group>"; };
 		55EABA4F28A451A100D608B1 /* ExtensionKeyboard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtensionKeyboard.swift; sourceTree = "<group>"; };
 		55EABA5E28A6D6C100D608B1 /* CustomColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomColor.swift; sourceTree = "<group>"; };
+		55EFF0F928AD3D23009633BF /* LaunchService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchService.swift; sourceTree = "<group>"; };
+		55EFF0FB28AD3E7A009633BF /* CustomProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomProfileView.swift; sourceTree = "<group>"; };
 		C8507C22EF0295F669103329 /* Pods_Crypto.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EDDC3DF8E51E93CAD7DF266B /* Pods-Crypto.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto.release.xcconfig"; path = "Target Support Files/Pods-Crypto/Pods-Crypto.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -151,6 +155,7 @@
 				5568E8B628AA9FF3008C2A50 /* DataExtraction.swift */,
 				5568E8B828AA9FFF008C2A50 /* NetworkDate.swift */,
 				5568E8BA28AAA010008C2A50 /* BaseNetworkTask.swift */,
+				55EFF0F928AD3D23009633BF /* LaunchService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -188,7 +193,8 @@
 			isa = PBXGroup;
 			children = (
 				55EABA5E28A6D6C100D608B1 /* CustomColor.swift */,
-				5568E8C428AAA223008C2A50 /* CustomView.swift */,
+				5568E8C428AAA223008C2A50 /* CustomRegistrationView.swift */,
+				55EFF0FB28AD3E7A009633BF /* CustomProfileView.swift */,
 			);
 			path = DetailModule;
 			sourceTree = "<group>";
@@ -346,6 +352,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5568E8C128AAA08A008C2A50 /* DetailTableViewCell.swift in Sources */,
+				55EFF0FC28AD3E7A009633BF /* CustomProfileView.swift in Sources */,
 				5568E8BB28AAA010008C2A50 /* BaseNetworkTask.swift in Sources */,
 				5568E8C728AAA238008C2A50 /* SortViewCell.swift in Sources */,
 				55EABA4E28A44FC000D608B1 /* WalletTableViewController.swift in Sources */,
@@ -353,6 +360,7 @@
 				5568E8AD28AA9F97008C2A50 /* MainTabBarController.swift in Sources */,
 				55EABA5028A451A100D608B1 /* ExtensionKeyboard.swift in Sources */,
 				5568E8BF28AAA068008C2A50 /* DetailCoinsViewController.swift in Sources */,
+				55EFF0FA28AD3D23009633BF /* LaunchService.swift in Sources */,
 				55570D85288D8E5700C64C7F /* RegistrationViewController.swift in Sources */,
 				5568E8C328AAA09F008C2A50 /* ProfileViewController.swift in Sources */,
 				5568E8B528AA9FCA008C2A50 /* SortBy.swift in Sources */,
@@ -364,7 +372,7 @@
 				5568E8B328AA9FC2008C2A50 /* OneCoinModel.swift in Sources */,
 				5568E8B928AA9FFF008C2A50 /* NetworkDate.swift in Sources */,
 				5568E8B728AA9FF3008C2A50 /* DataExtraction.swift in Sources */,
-				5568E8C528AAA223008C2A50 /* CustomView.swift in Sources */,
+				5568E8C528AAA223008C2A50 /* CustomRegistrationView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

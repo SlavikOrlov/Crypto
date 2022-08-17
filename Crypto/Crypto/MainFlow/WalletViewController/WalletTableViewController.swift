@@ -46,6 +46,11 @@ class WalletViewController: UIViewController {
         let sortButton = UIBarButtonItem(image: UIImage(named: "searchTab"), style: .plain, target: self, action: #selector(presentModalController))
         navigationItem.rightBarButtonItem = sortButton
         navigationController?.navigationBar.tintColor = .black
+
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithTransparentBackground()
+
+        navigationController?.navigationBar.standardAppearance = appearance
     }
     
     private func getsCoins() {

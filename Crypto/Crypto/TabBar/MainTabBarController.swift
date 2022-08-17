@@ -28,9 +28,11 @@ final class MainTabBarController: UITabBarController {
     
     private func getViewControllers() {
         let walletViewController = UINavigationController(
-            rootViewController: WalletViewController())
+            rootViewController: WalletViewController()
+        )
         let profileViewController = UINavigationController(
-            rootViewController: ProfileViewController())
+            rootViewController: ProfileViewController()
+        )
         walletViewController.tabBarItem = UITabBarItem(
             title: "CryptoWallet",
             image: UIImage(named: "mainTab"),
