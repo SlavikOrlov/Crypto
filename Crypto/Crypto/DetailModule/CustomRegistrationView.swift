@@ -16,7 +16,7 @@ final class CustomRegistrationView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
+        addSubview(mainLabel)
         setupVerticalStackView()
         setupLayout()
     }
@@ -27,7 +27,13 @@ final class CustomRegistrationView: UIView {
     
     // MARK: - Constants
     
-    //Добавить картинку
+    let mainLabel: UILabel = {
+        let label = UILabel()
+        label.text = "Crypto"
+        label.font = UIFont(name: "Noteworthy", size: 50)
+        label.textAlignment = .center
+        return label
+    }()
     
     let emailTextField: UITextField = {
         let textField = UITextField()
@@ -89,11 +95,19 @@ final class CustomRegistrationView: UIView {
     }
     
     private func setupLayout() {
+        
+        mainLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            mainLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
+            mainLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 210),
+            mainLabel.heightAnchor.constraint(equalToConstant: 100)
+            
+        ])
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             verticalStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
             verticalStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
-            verticalStackView.topAnchor.constraint(equalTo: self.topAnchor, constant: 450),
+            verticalStackView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 140),
             buttonEnter.heightAnchor.constraint(equalToConstant: 40),
             passwordTextField.heightAnchor.constraint(equalToConstant: 40),
             emailTextField.heightAnchor.constraint(equalToConstant: 40),
