@@ -10,8 +10,9 @@ import UIKit
 
 final class CustomRegistrationView: UIView {
     
-    var buttonAction: (() -> Void)?    
-    
+    var buttonAction: (() -> Void)?
+    private let showHidePasswordButton = UIButton(type: .custom)
+
     // MARK: - Initialization
     
     override init(frame: CGRect) {
@@ -19,6 +20,7 @@ final class CustomRegistrationView: UIView {
         addSubview(mainLabel)
         setupVerticalStackView()
         setupLayout()
+        enablePasswordToggle()
     }
     
     required init?(coder: NSCoder) {
@@ -60,6 +62,7 @@ final class CustomRegistrationView: UIView {
         )
         textField.textAlignment = .center
         textField.clearButtonMode = .always
+        textField.keyboardType = .numberPad
         return textField
     }()
     
@@ -113,9 +116,30 @@ final class CustomRegistrationView: UIView {
             emailTextField.heightAnchor.constraint(equalToConstant: 40),
         ])
     }
+        
+        private func enablePasswordToggle(){
+            var buttonConfiguration = UIButton.Configuration.filled()
+            buttonConfiguration.baseBackgroundColor = CustomColor.clear
+            buttonConfiguration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: -16, bottom: 0, trailing: 0)
+            
+            showHidePasswordButton.configuration = buttonConfiguration
+            showHidePasswordButton.setImage(ExtensionImage.passwordIsHidden, for: .normal)
+            showHidePasswordButton.setImage(ExtensionImage.passwordIsShown, for: .selected)
+            showHidePasswordButton.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
+            passwordTextField.rightView = showHidePasswordButton
+            passwordTextField.rightViewMode = .always
+            showHidePasswordButton.alpha = 0.4
+        }
     
+    //MARK: - Actions
+
     @objc func tapButtonEnter() {
         buttonAction?()
+    }
+    
+    @objc func togglePasswordView(_ sender: Any) {
+        passwordTextField.isSecureTextEntry.toggle()
+        showHidePasswordButton.isSelected.toggle()
     }
     
 }
