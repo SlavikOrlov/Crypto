@@ -13,7 +13,7 @@ class DetailCoinsViewController: UIViewController {
     
     let iconImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = UIImage(named: "coin1")
+        imageView.image = ExtensionImage.detailViewImage
         imageView.clipsToBounds = true
         return imageView
     }()

@@ -22,7 +22,7 @@
                                 <color key="textColor" red="0.84313726430000002" green="0.55294120309999995" blue="0.20784312490000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coin1" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-OT-38J">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="coinLogo" translatesAutoresizingMaskIntoConstraints="NO" id="7d0-OT-38J">
                                 <rect key="frame" x="159" y="306" width="96" height="96"/>
                             </imageView>
                         </subviews>
@@ -45,7 +45,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="coin1" width="96" height="96"/>
+        <image name="coinLogo" width="96" height="96"/>
         <systemColor name="systemGray5Color">
             <color red="0.89803921568627454" green="0.89803921568627454" blue="0.91764705882352937" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>

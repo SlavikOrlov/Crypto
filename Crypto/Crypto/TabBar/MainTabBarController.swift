@@ -11,6 +11,9 @@ import UIKit
 
 final class MainTabBarController: UITabBarController {
     
+    private let mainTabImage: UIImage? = ExtensionImage.mainTab
+    private let profileTabImage: UIImage? = ExtensionImage.profileTab
+    
     // MARK: - Lifecyrcle
     
     override func viewDidLoad() {
@@ -35,13 +38,13 @@ final class MainTabBarController: UITabBarController {
         )
         walletViewController.tabBarItem = UITabBarItem(
             title: "CryptoWallet",
-            image: UIImage(named: "mainTab"),
-            selectedImage: UIImage(named: "mainTab")
+            image: mainTabImage,
+            selectedImage: mainTabImage
         )
         profileViewController.tabBarItem = UITabBarItem(
             title: "CryptoProfile",
-            image: UIImage(named: "profileTab"),
-            selectedImage: UIImage(named: "profileTab")
+            image: profileTabImage,
+            selectedImage: profileTabImage
         )
         viewControllers = [walletViewController, profileViewController]
     }
