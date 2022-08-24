@@ -9,44 +9,32 @@ import UIKit
 
 class ProfileViewController: UIViewController {
     
-    // MARK: - Constants
-        
-    private let logOutButton: UIButton = {
-        let button = UIButton()
-        button.setTitleColor(.black, for: .normal)
-        button.setTitle("Exit to Registration", for: .normal)
-        button.layer.cornerRadius = 20
-        button.backgroundColor = CustomColor.buttonColor
-        button.addTarget(
-            self,
-            action: #selector(tapLogOutButtonEnter),
-            for: .touchUpInside
-        )
-        return button
-    }()
-    
     // MARK: - Lifecyrcle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = CustomColor.backgroundTableViewColor
-        view.addSubview(logOutButton)
-        addConstraints()
         title = "CryptoProfile"
+        configureNavigationBar()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.setHidesBackButton(true, animated: true)
     }
     
     //MARK: - Private Methods
     
-    private func addConstraints() {
-        logOutButton.translatesAutoresizingMaskIntoConstraints = false
-        NSLayoutConstraint.activate([
-            logOutButton.widthAnchor.constraint(equalToConstant: 200),
-            logOutButton.heightAnchor.constraint(equalToConstant: 40),
-            logOutButton.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            logOutButton.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
-        ])
+    private func configureNavigationBar() {
+        
+    let logOutButton = createCustomButton(
+        titleName: "< LogOut",
+        selector: #selector(tapLogOutButtonEnter)
+    )
+    navigationItem.leftBarButtonItem = logOutButton
     }
     
+    //MARK: - Actions
+
     @objc func tapLogOutButtonEnter() {
         let registrationViewController = RegistrationViewController(
             customRegistrationView: CustomRegistrationView(),

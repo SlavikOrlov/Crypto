@@ -36,6 +36,7 @@ final class RegistrationViewController: UIViewController {
         customRegistrationView.passwordTextField.delegate = self
         self.customRegistrationView.buttonAction = tapButtonEnter
         self.hideKeyboard()
+        self.keyboardCheck()
     }
     
     //MARK: - Private Methods
