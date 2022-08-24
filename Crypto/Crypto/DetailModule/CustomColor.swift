@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 enum CustomColor {
+    static let clear = UIColor.clear
     static let textColor = UIColor.black
+    static let textColorButton = UIColor.black
     static let backgroundTextColor = UIColor(
         red: 212.0/255.0,
         green: 168.0/255.0,
