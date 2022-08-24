@@ -11,7 +11,8 @@ import UIKit
 class WalletViewController: UIViewController {
     
     // MARK: - Properties
-    
+    private let searchBarImage: UIImage? = ExtensionImage.searchBar
+
     var coins: [Items]!
     
     private let tableView: UITableView = {
@@ -29,8 +30,7 @@ class WalletViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        title = "CryptoWallet"
-        setupNavigation()
+        configureNavigationBar()
     }
     
     override func viewDidLayoutSubviews() {
@@ -42,16 +42,17 @@ class WalletViewController: UIViewController {
     
     // MARK: - Private Methods
     
-    private func setupNavigation() {
+    func configureNavigationBar() {
+        navigationItem.title = "CryptoWallet"
         let sortButton = UIBarButtonItem(
-            image: UIImage(named: "sortTab"),
+            image: searchBarImage,
             style: .plain,
             target: self,
             action: #selector(presentModalController)
         )
         navigationItem.rightBarButtonItem = sortButton
-        navigationController?.navigationBar.tintColor = .black
-
+        navigationItem.rightBarButtonItem?.tintColor = CustomColor.textColor
+        
         let appearance = UINavigationBarAppearance()
         appearance.configureWithTransparentBackground()
         navigationController?.navigationBar.standardAppearance = appearance
@@ -64,6 +65,24 @@ class WalletViewController: UIViewController {
             self.coins = coinsModel.data
             self.tableView.reloadData()
         }
+    }
+}
+
+// MARK: - Extension
+
+extension WalletViewController: SortViewControllerDelegate {
+    
+    func sortBy(option: SortBy) {
+        switch option {
+            
+        case .fallingPerDay:
+            coins = coins.sorted(by: { $0.metrics.market_data.percent_change_usd_last_24_hours ?? 0 > $1.metrics.market_data.percent_change_usd_last_24_hours ?? 0
+            })
+        case .growthPerDay:
+            coins = coins.sorted(by: { $0.metrics.market_data.percent_change_usd_last_24_hours ?? 0 < $1.metrics.market_data.percent_change_usd_last_24_hours ?? 0
+            })
+        }
+        tableView.reloadData()
     }
 }
 
@@ -85,17 +104,6 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 40
-    }
-    
-    @objc func presentModalController() {
-        let bonusViewController = BonusViewController()
-        bonusViewController.delegate = self
-        let nav = UINavigationController(rootViewController: bonusViewController)
-        nav.modalPresentationStyle = .pageSheet
-        if let sheet = nav.sheetPresentationController {
-            sheet.detents = [.medium()]
-        }
-        present(nav, animated: true)
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -156,20 +164,17 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         return 50
     }
-}
-
-extension WalletViewController: SortViewControllerDelegate {
     
-    func sortBy(option: SortBy) {
-        switch option {
-            
-        case .fallingPerDay:
-            coins = coins.sorted(by: { $0.metrics.market_data.percent_change_usd_last_24_hours ?? 0 > $1.metrics.market_data.percent_change_usd_last_24_hours ?? 0
-            })
-        case .growthPerDay:
-            coins = coins.sorted(by: { $0.metrics.market_data.percent_change_usd_last_24_hours ?? 0 < $1.metrics.market_data.percent_change_usd_last_24_hours ?? 0
-            })
+    //MARK: - Actions
+
+    @objc func presentModalController() {
+        let sortViewController = SortViewController()
+        sortViewController.delegate = self
+        let vc = UINavigationController(rootViewController: sortViewController)
+        vc.modalPresentationStyle = .pageSheet
+        if let sheet = vc.sheetPresentationController {
+            sheet.detents = [.medium()]
         }
-        tableView.reloadData()
+        present(vc, animated: true)
     }
 }

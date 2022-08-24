@@ -11,7 +11,7 @@ protocol SortViewControllerDelegate: AnyObject {
     func sortBy(option: SortBy)
 }
 
-class BonusViewController: UIViewController {
+class SortViewController: UIViewController {
 
     private let tableView: UITableView = {
         let tableView = UITableView()
@@ -40,7 +40,7 @@ class BonusViewController: UIViewController {
 
 //MARK: - UITextFieldDelegate, UITableViewDataSource
 
-extension BonusViewController: UITableViewDelegate, UITableViewDataSource {
+extension SortViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 2
