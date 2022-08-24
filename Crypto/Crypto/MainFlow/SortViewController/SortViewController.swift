@@ -1,5 +1,5 @@
 //
-//  BonusViewController.swift
+//  SortViewController.swift
 //  Crypto
 //
 //  Created by Slava Orlov on 14.08.2022.
