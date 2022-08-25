@@ -12,11 +12,13 @@ protocol SortViewControllerDelegate: AnyObject {
 }
 
 class SortViewController: UIViewController {
-
+    
     private let tableView: UITableView = {
         let tableView = UITableView()
-        tableView.register(SortViewCell.self,
-                           forCellReuseIdentifier: SortViewCell.identifier)
+        tableView.register(
+            SortViewCell.self,
+            forCellReuseIdentifier: SortViewCell.identifier
+        )
         return tableView
     }()
     
@@ -51,7 +53,7 @@ extension SortViewController: UITableViewDelegate, UITableViewDataSource {
         if let sortOption = SortBy(index: indexPath.row) {
             cell.textLabel?.text = sortOption.description
             cell.backgroundColor = CustomColor.backgroundTextColor
-        
+            
             if let objects = UserDefaults.standard.object(forKey: "selectedIndex") {
                 let selectedIndex = UserDefaults.standard.integer(forKey: "selectedIndex")
                 if sortOption == SortBy(rawValue: selectedIndex) {

@@ -11,6 +11,8 @@ import UIKit
 
 final class MainTabBarController: UITabBarController {
     
+    // MARK: - Constants
+
     private let mainTabImage: UIImage? = ExtensionImage.mainTab
     private let profileTabImage: UIImage? = ExtensionImage.profileTab
     

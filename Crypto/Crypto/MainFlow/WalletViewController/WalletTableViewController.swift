@@ -11,8 +11,9 @@ import UIKit
 class WalletViewController: UIViewController {
     
     // MARK: - Properties
+    
     private let searchBarImage: UIImage? = ExtensionImage.searchBar
-
+    
     var coins: [Items]!
     
     private let tableView: UITableView = {
@@ -48,7 +49,7 @@ class WalletViewController: UIViewController {
             image: searchBarImage,
             style: .plain,
             target: self,
-            action: #selector(presentModalController)
+            action: #selector(presentSortViewController)
         )
         navigationItem.rightBarButtonItem = sortButton
         navigationItem.rightBarButtonItem?.tintColor = CustomColor.textColor
@@ -119,7 +120,8 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
                 x: 0,
                 y: 0,
                 width: view.frame.size.width,
-                height: 50)
+                height: 50
+            )
         )
         header.backgroundColor = CustomColor.backgroundHeaderColor
         
@@ -128,7 +130,8 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
                 x: 20,
                 y: 5,
                 width: 90,
-                height: header.frame.size.height - 10)
+                height: header.frame.size.height - 10
+            )
         )
         firstNameLabel.text = "Name"
         firstNameLabel.font = .boldSystemFont(ofSize: 16)
@@ -138,7 +141,8 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
                 x: 30 + firstNameLabel.frame.width,
                 y: 5,
                 width: 100,
-                height: header.frame.size.height - 10)
+                height: header.frame.size.height - 10
+            )
         )
         priceLabel.text = "Price"
         priceLabel.font = .boldSystemFont(ofSize: 16)
@@ -149,7 +153,8 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
                 x: 10 + priceLabel.frame.maxX,
                 y: 5,
                 width: 180,
-                height: header.frame.size.height - 10)
+                height: header.frame.size.height - 10
+            )
         )
         change24HoursLabel.text = "Change for 24 hours"
         change24HoursLabel.numberOfLines = 1
@@ -166,8 +171,8 @@ extension WalletViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     //MARK: - Actions
-
-    @objc func presentModalController() {
+    
+    @objc func presentSortViewController() {
         let sortViewController = SortViewController()
         sortViewController.delegate = self
         let vc = UINavigationController(rootViewController: sortViewController)

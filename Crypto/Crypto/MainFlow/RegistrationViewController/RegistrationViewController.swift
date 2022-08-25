@@ -51,22 +51,30 @@ final class RegistrationViewController: UIViewController {
         view.addSubview(customRegistrationView)
         customRegistrationView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            customRegistrationView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            customRegistrationView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            customRegistrationView.topAnchor.constraint(equalTo: view.topAnchor),
-            customRegistrationView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            customRegistrationView.leadingAnchor.constraint(
+                equalTo: view.leadingAnchor
+            ),
+            customRegistrationView.trailingAnchor.constraint(
+                equalTo: view.trailingAnchor
+            ),
+            customRegistrationView.topAnchor.constraint(
+                equalTo: view.topAnchor
+            ),
+            customRegistrationView.bottomAnchor.constraint(
+                equalTo: view.bottomAnchor
+            )
         ])
     }
     
     private func tapButtonEnter() {
         guard
             customRegistrationView.emailTextField.text == user.login &&
-            customRegistrationView.passwordTextField.text == user.password
+                customRegistrationView.passwordTextField.text == user.password
         else {
             alert()
             return
         }
-
+        
         let tabBar = MainTabBarController()
         UserDefaults.standard.set(true, forKey: "123")
         (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.changeRootViewController(tabBar)
@@ -87,12 +95,16 @@ extension RegistrationViewController {
             title: "OK",
             style: .cancel,
             handler: { [weak self] _ in
-            guard let self = self else {return}
-            self.customRegistrationView.emailTextField.text = nil
-            self.customRegistrationView.passwordTextField.text = nil
-        })
+                guard let self = self else {return}
+                self.customRegistrationView.emailTextField.text = nil
+                self.customRegistrationView.passwordTextField.text = nil
+            })
         alert.addAction(buttonAction)
-        present(alert, animated: true, completion: nil)
+        present(
+            alert,
+            animated: true,
+            completion: nil
+        )
     }
 }
 
