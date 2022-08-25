@@ -9,7 +9,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-   
+    
     //MARK: - Private Methods Keyboard
     
     func hideKeyboard() {
@@ -21,12 +21,22 @@ extension UIViewController {
     }
     
     func keyboardCheck() {
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow), name: UIResponder.keyboardWillShowNotification, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillHide), name: UIResponder.keyboardWillHideNotification, object: nil)
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillShow),
+            name: UIResponder.keyboardWillShowNotification,
+            object: nil
+        )
+        NotificationCenter.default.addObserver(
+            self,
+            selector: #selector(keyboardWillHide),
+            name: UIResponder.keyboardWillHideNotification,
+            object: nil
+        )
     }
     
     //MARK: - Actions
-
+    
     @objc func dismissKeyboard() {
         view.endEditing(true)
     }
@@ -38,7 +48,7 @@ extension UIViewController {
             }
         }
     }
-
+    
     @objc func keyboardWillHide(notification: NSNotification) {
         if self.view.frame.origin.y != 0 {
             self.view.frame.origin.y = 0

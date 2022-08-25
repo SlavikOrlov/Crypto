@@ -10,14 +10,14 @@ import UIKit
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     
     var window: UIWindow?
-
+    
     private var launchService = LaunchService()
     
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
         guard let windowScene = (scene as? UIWindowScene) else { return }
         self.window = UIWindow(windowScene: windowScene)
-
+        
         window?.rootViewController = launchService.getRootViewController()
         self.window?.makeKeyAndVisible()
     }
@@ -33,6 +33,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             completion: nil
         )
     }
-    
 }
-

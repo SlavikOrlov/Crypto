@@ -12,7 +12,7 @@ final class CustomRegistrationView: UIView {
     
     var buttonAction: (() -> Void)?
     private let showHidePasswordButton = UIButton(type: .custom)
-
+    
     // MARK: - Initialization
     
     override init(frame: CGRect) {
@@ -78,7 +78,7 @@ final class CustomRegistrationView: UIView {
             for: .touchUpInside
         )
         return button
-}()
+    }()
     
     let verticalStackView: UIStackView = {
         let stackView = UIStackView()
@@ -89,7 +89,7 @@ final class CustomRegistrationView: UIView {
     }()
     
     //MARK: - Private Methods
-
+    
     private func setupVerticalStackView() {
         verticalStackView.addArrangedSubview(emailTextField)
         verticalStackView.addArrangedSubview(passwordTextField)
@@ -101,38 +101,73 @@ final class CustomRegistrationView: UIView {
         
         mainLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            mainLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            mainLabel.topAnchor.constraint(equalTo: self.topAnchor, constant: 210),
+            mainLabel.centerXAnchor.constraint(
+                equalTo: self.centerXAnchor
+            ),
+            mainLabel.topAnchor.constraint(
+                equalTo: self.topAnchor,
+                constant: 210
+            ),
             mainLabel.heightAnchor.constraint(equalToConstant: 100)
             
         ])
         verticalStackView.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            verticalStackView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 60),
-            verticalStackView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -60),
-            verticalStackView.topAnchor.constraint(equalTo: mainLabel.bottomAnchor, constant: 140),
-            buttonEnter.heightAnchor.constraint(equalToConstant: 40),
-            passwordTextField.heightAnchor.constraint(equalToConstant: 40),
-            emailTextField.heightAnchor.constraint(equalToConstant: 40),
+            verticalStackView.leadingAnchor.constraint(
+                equalTo: self.leadingAnchor,
+                constant: 60
+            ),
+            verticalStackView.trailingAnchor.constraint(
+                equalTo: self.trailingAnchor,
+                constant: -60
+            ),
+            verticalStackView.topAnchor.constraint(
+                equalTo: mainLabel.bottomAnchor,
+                constant: 140
+            ),
+            buttonEnter.heightAnchor.constraint(
+                equalToConstant: 40
+            ),
+            passwordTextField.heightAnchor.constraint(
+                equalToConstant: 40
+            ),
+            emailTextField.heightAnchor.constraint(
+                equalToConstant: 40
+            ),
         ])
     }
+    
+    private func enablePasswordToggle(){
+        var buttonConfiguration = UIButton.Configuration.filled()
+        buttonConfiguration.baseBackgroundColor = CustomColor.clear
+        buttonConfiguration.contentInsets = NSDirectionalEdgeInsets(
+            top: 0,
+            leading: -16,
+            bottom: 0,
+            trailing: 0
+        )
         
-        private func enablePasswordToggle(){
-            var buttonConfiguration = UIButton.Configuration.filled()
-            buttonConfiguration.baseBackgroundColor = CustomColor.clear
-            buttonConfiguration.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: -16, bottom: 0, trailing: 0)
-            
-            showHidePasswordButton.configuration = buttonConfiguration
-            showHidePasswordButton.setImage(ExtensionImage.passwordIsHidden, for: .normal)
-            showHidePasswordButton.setImage(ExtensionImage.passwordIsShown, for: .selected)
-            showHidePasswordButton.addTarget(self, action: #selector(togglePasswordView), for: .touchUpInside)
-            passwordTextField.rightView = showHidePasswordButton
-            passwordTextField.rightViewMode = .always
-            showHidePasswordButton.alpha = 0.4
-        }
+        showHidePasswordButton.configuration = buttonConfiguration
+        showHidePasswordButton.setImage(
+            ExtensionImage.passwordIsHidden,
+            for: .normal
+        )
+        showHidePasswordButton.setImage(
+            ExtensionImage.passwordIsShown,
+            for: .selected
+        )
+        showHidePasswordButton.addTarget(
+            self,
+            action: #selector(togglePasswordView),
+            for: .touchUpInside
+        )
+        passwordTextField.rightView = showHidePasswordButton
+        passwordTextField.rightViewMode = .always
+        showHidePasswordButton.alpha = 0.4
+    }
     
     //MARK: - Actions
-
+    
     @objc func tapButtonEnter() {
         buttonAction?()
     }
@@ -141,5 +176,4 @@ final class CustomRegistrationView: UIView {
         passwordTextField.isSecureTextEntry.toggle()
         showHidePasswordButton.isSelected.toggle()
     }
-    
 }

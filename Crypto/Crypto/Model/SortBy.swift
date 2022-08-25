@@ -12,13 +12,13 @@ enum SortBy: Int {
     case growthPerDay
     
     init?(index: Int) {
-            switch index {
-            case 0: self = .fallingPerDay
-            case 1: self = .growthPerDay
-            default:
-                return nil
-            }
+        switch index {
+        case 0: self = .fallingPerDay
+        case 1: self = .growthPerDay
+        default:
+            return nil
         }
+    }
     
     var description: String? {
         get {
