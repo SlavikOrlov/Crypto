@@ -26,6 +26,7 @@
 (Возможность выйти из учетной записи. При нажатии на "LogOut", будет запущен экран регистрации)
 
 **Примеры экранов:**
+
 <img width="200" alt="Снимок экрана 2022-08-25 в 23 33 23" src="https://user-images.githubusercontent.com/99760600/186769230-00b77a35-a170-42bb-bf9f-067c1f04cbd2.png">
 <img width="200" alt="Снимок экрана 2022-08-25 в 23 33 58" src="https://user-images.githubusercontent.com/99760600/186769285-03bb8753-4286-43c0-9884-4256a7e8eeef.png">
 <img width="200" alt="Снимок экрана 2022-08-25 в 23 34 13" src="https://user-images.githubusercontent.com/99760600/186769345-5592aea7-4f6a-4250-a6bf-c38435b603ad.png">
