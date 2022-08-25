@@ -14,17 +14,14 @@ protocol DataFetcher {
     )
 }
 
-// Декодирование полученных данных в конкретную модель
 class NetworkDataFetcher: DataFetcher {
     
     var networking: Networking
     
-    // NetworkDataFetcher не будет требовать никакой инициализации, стоит автоматич инициализация
     init(networking: Networking = BaseNetworkTask() ){
         self.networking = networking
     }
     
-    // Связь между запросом данных из networkService и JSON
     func fetchGenericJSONData<T: Decodable>(urlString: String, response: @escaping (T?) -> Void) {
         networking.request(urlString: urlString) { data, error in
             if let error = error {
@@ -36,7 +33,6 @@ class NetworkDataFetcher: DataFetcher {
         }
     }
     
-    // Декодирование JSON данных в любую модель подписанную под протокол Decodable
     func decodeJSON<T: Decodable>(type: T.Type, data: Data?) -> T? {
         let decoder = JSONDecoder()
         guard let data = data else { return nil }
